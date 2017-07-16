@@ -13,7 +13,7 @@ import DriverRegistrationForm from './components/driverregistration';
 let Users = [
     new Passenger("anal123", "Michael", "h27a123", "+38(093)911-91-19"),
     new Passenger("pashapidor", "Alexander", "asasa", "+38(050)184-14-88"),
-    new Driver("dayapidor", "Pavel", "qwerty78", "+38(095)232-23-32", "Nissan Qashqai", "Average", "AA2728PI")
+    new Driver("dayapidor", "Pavel", "qwerty78", "+38(095)232-23-32", "Nissan Qashqai", "classic", "AA2728PI")
 ];
 
 let TerminalOrders = [];

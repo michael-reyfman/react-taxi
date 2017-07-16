@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-bootstrap';
 import MaskedFormControl from 'react-bootstrap-maskedinput';
-import Passenger from '../models/passenger';
+import Driver from '../models/driver';
 
 
 class DriverRegistrationForm extends Component {
@@ -20,11 +20,14 @@ class DriverRegistrationForm extends Component {
             carclass: "Economy",
             carnumber: ""
         };
-        this.usernameFill = this.usernameFill.bind(this);
-        this.passwordFill = this.passwordFill.bind(this);
-        this.nameFill     = this.nameFill.bind(this);
-        this.phoneFill    = this.phoneFill.bind(this);
-        this.extractUser  = this.extractUser.bind(this);
+        this.usernameFill   = this.usernameFill.bind(this);
+        this.passwordFill   = this.passwordFill.bind(this);
+        this.nameFill       = this.nameFill.bind(this);
+        this.phoneFill      = this.phoneFill.bind(this);
+        this.extractUser    = this.extractUser.bind(this);
+        this.carModelFill   = this.carModelFill.bind(this);
+        this.carNumberFill  = this.carNumberFill.bind(this);
+        this.carClassChange = this.carClassChange.bind(this);
     }
     usernameFill(event) {
         this.setState({username: event.target.value});
@@ -38,8 +41,26 @@ class DriverRegistrationForm extends Component {
     phoneFill(event) {
         this.setState({phone: event.target.value});
     }
+    carModelFill(event) {
+        this.setState({car: event.target.value});
+    }
+    carNumberFill(event) {
+        this.setState({carnumber: event.target.value});
+    }
+    carClassChange(event) {
+        this.setState({carclass: event.target.value});
+    }
     extractUser(event) {
-        this.props.addUser(new Passenger(this.state.username, this.state.name, this.state.password, this.state.phone));
+        this.props.addUser(
+            new Driver(
+                this.state.username,
+                this.state.name,
+                this.state.password,
+                this.state.phone,
+                this.state.car,
+                this.state.carclass,
+                this.state.carnumber
+            ));
         event.preventDefault();
     }
     render() {
@@ -96,6 +117,20 @@ class DriverRegistrationForm extends Component {
                     </Col>
                     <Col sm={6}>
                         <MaskedFormControl type='text' name='carNumber' mask='AA 1111 AA' onChange={this.carNumberFill}/>
+                    </Col>
+                </FormGroup>
+
+                <FormGroup controlId="formHorizontalClassSelect">
+                    <Col componentClass={ControlLabel} sm={3}>
+                        Car class
+                    </Col>
+                    <Col sm={6}>
+                        <FormControl componentClass="select" placeholder="Car class" onChange={this.carClassChange}>
+                            <option value="economy">Economy</option>
+                            <option value="classic">Classic</option>
+                            <option value="comfort">Comfort</option>
+                            <option value="vip">VIP</option>
+                        </FormControl>
                     </Col>
                 </FormGroup>
 
