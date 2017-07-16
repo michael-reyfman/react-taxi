@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.login-panel {
+    min-width: 320px;
+}
+
+.form-header {
+    text-align: center;
+}
+
+.form-element {
+    margin: 10px 10px 10px 5px;
+}
+
+.form-element label {
+    padding-top: 8px;
+    margin-left: -10px;
+    margin-right: 5px;
+}
+
+.login-button {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-welcome {
+    margin-top: 15px;
+    color: #fff;
+}
+
+.small-text {
+    font-size: 0.75em;
+}
+
+.active-true {
+    pointer-events: none;
+    cursor: default;
+    color: black;
+}
