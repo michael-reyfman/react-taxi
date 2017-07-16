@@ -3,12 +3,8 @@ import './App.css';
 import Navigation from './components/navigation';
 import Passenger from './models/passenger';
 import Driver from './models/driver';
-import PassRegistrationForm from './components/passregistration';
-import DriverRegistrationForm from './components/driverregistration';
-// import Login from './components/login';
-// import {
-//     FormControl, FormGroup, Col, Button, ControlLabel, Nav, Navbar, NavDropdown, NavItem, MenuItem
-// } from 'react-bootstrap';
+import Main from './routers/main';
+
 
 let Users = [
     new Passenger("anal123", "Michael", "h27a123", "+38(093)911-91-19"),
@@ -47,18 +43,15 @@ class App extends Component {
     render() {
         console.log(this.state.login, this.state.activeuser, this.state.usertype);
         console.log(this.state.userlist);
-        let regform;
-        if(this.state.activereg === "left")
-            regform = <PassRegistrationForm users={this.state.userlist} addUser={this.addUser.bind(this)}/>;
-            else
-                regform = <DriverRegistrationForm users={this.state.userlist} addUser={this.addUser.bind(this)}/>;
-        const left = <a href="#" className={"active-" + (this.state.activereg === "left")} onClick={this.changeForm}>passengers</a>;
-        const right = <a href="#" className={"active-" + (this.state.activereg === "right")} onClick={this.changeForm}>drivers</a>;
         return (
             <div className="App">
                 <Navigation users={this.state.userlist} returnInfo={this.returnInfo.bind(this)}/>
-                <h2> Registration for {left} | {right}</h2>
-                {regform}
+                <Main
+                    activereg={this.state.activereg}
+                    userlist={this.state.userlist}
+                    addUser={this.addUser.bind(this)}
+                    changeForm={this.changeForm.bind(this)}
+                />
             </div>
         );
     }

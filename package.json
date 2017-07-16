@@ -7,7 +7,8 @@
     "react-bootstrap": "^0.31.1",
     "react-bootstrap-maskedinput": "^0.3.0",
     "react-dom": "^15.6.1",
-    "react-input-mask": "^1.0.6"
+    "react-input-mask": "^1.0.6",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "react-scripts": "1.0.10"

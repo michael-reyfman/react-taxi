@@ -6,6 +6,7 @@ import '../App.css';
 import {FormControl, FormGroup, Col, Button, ControlLabel, Navbar} from 'react-bootstrap';
 import Passenger from '../models/passenger';
 import Driver from '../models/driver';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
     constructor() {
@@ -75,7 +76,7 @@ class Login extends Component {
                         </Col>
                     </FormGroup>
 
-                    <p className="small-text">New here? Please complete registration (it's fast and fancy!)</p>
+                    <p className="small-text">New here? Please complete <Link to={{pathname: '/registration'}}>registration</Link> (it's fast and fancy!)</p>
                 </Navbar.Form>
             </div>
         );

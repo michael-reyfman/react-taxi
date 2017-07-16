@@ -6,6 +6,8 @@ import '../App.css';
 import {Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap';
 import  '../App.js';
 import Login from './login';
+import { Link } from 'react-router-dom';
+
 
 class Navigation extends Component {
     constructor() {
@@ -38,7 +40,7 @@ class Navigation extends Component {
             <Navbar inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">React-Taxi</a>
+                        <Link to="/">React Taxi</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
