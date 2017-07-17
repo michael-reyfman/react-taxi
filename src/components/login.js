@@ -13,7 +13,8 @@ class Login extends Component {
         super();
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            matching: true,
         };
         this.usernameFill = this.usernameFill.bind(this);
         this.passwordFill = this.passwordFill.bind(this);
@@ -31,16 +32,27 @@ class Login extends Component {
         let flag = false;
         for(let i = 0; i < users.length; i++)
             flag = flag || (users[i].username === this.state.username && users[i].password === this.state.password && users[i] instanceof Passenger);
-        flag ? this.props.returnData(this.state.username, this.state.password) : console.log("Wrong login/password or user not a passenger");
+        if(flag) {
+            this.props.returnData(this.state.username, this.state.password);
+            this.setState({matching: true});
+        } else {
+            this.setState({matching: false});
+        }
     }
     signInDriver() {
         const users = this.props.users;
         let flag = false;
         for(let i = 0; i < users.length; i++)
             flag = flag || (users[i].username === this.state.username && users[i].password === this.state.password && users[i] instanceof Driver);
-        flag ? this.props.returnData(this.state.username, this.state.password) : console.log("Wrong login/password or user not a driver");
+        if(flag) {
+            this.props.returnData(this.state.username, this.state.password);
+            this.setState({matching: true});
+        } else {
+            this.setState({matching: false});
+        }
     }
     render() {
+        const error = this.state.matching ? null : <p className="small-text error-msg">Error! Wrong username or password!</p>;
         return(
             <div className="login-panel">
                 <h4 className="form-header">Login</h4>
@@ -66,16 +78,16 @@ class Login extends Component {
                     <FormGroup className="form-element">
                         <Col sm={6}>
                             <Button type="submit" className="login-button" onClick={this.signInPassenger}>
-                                Sign as passenger
+                                <Link to="/">Sign as passenger</Link>
                             </Button>
                         </Col>
                         <Col sm={6}>
                             <Button type="submit" className="login-button" onClick={this.signInDriver}>
-                                Sign as driver
+                                <Link to="/">Sign as driver</Link>
                             </Button>
                         </Col>
                     </FormGroup>
-
+                    {error}
                     <p className="small-text">New here? Please complete <Link to={{pathname: '/registration'}}>registration</Link> (it's fast and fancy!)</p>
                 </Navbar.Form>
             </div>

@@ -31,6 +31,13 @@ class App extends Component {
         const _type = _user instanceof Passenger ? "Passenger" : "Driver";
         this.setState({login: true, activeuser: _user, usertype: _type});
     }
+    resetUser() {
+        this.setState({
+            login: false,
+            activeuser: {},
+            usertype: undefined
+        })
+    }
     addUser(user) {
         let users = this.state.userlist;
         users.push(user);
@@ -45,16 +52,22 @@ class App extends Component {
         console.log(this.state.userlist);
         return (
             <div className="App">
-                <Navigation users={this.state.userlist} returnInfo={this.returnInfo.bind(this)}/>
+                <Navigation users={this.state.userlist} returnInfo={this.returnInfo.bind(this)} resetUser={this.resetUser.bind(this)}/>
                 <Main
                     activereg={this.state.activereg}
                     userlist={this.state.userlist}
                     addUser={this.addUser.bind(this)}
                     changeForm={this.changeForm.bind(this)}
+                    user={this.state.activeuser}
+                    usertype={this.state.usertype}
                 />
             </div>
         );
     }
 }
+
+App.propTypes = {
+    resetUser: React.PropTypes.func,
+};
 
 export default App;

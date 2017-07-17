@@ -41,3 +41,7 @@
     cursor: default;
     color: black;
 }
+
+.error-msg {
+    color: red;
+}

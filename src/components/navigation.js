@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import '../App.css';
-import {Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap';
+import {Nav, Navbar, NavDropdown, NavItem, MenuItem} from 'react-bootstrap';
 import  '../App.js';
 import Login from './login';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,7 @@ class Navigation extends Component {
             signed: false,
             user: {},
         };
+        this.logout = this.logout.bind(this);
     }
     returnData(login, password) {
         let users = this.props.users;
@@ -26,15 +27,21 @@ class Navigation extends Component {
             }
         }
     }
+    logout() {
+        this.setState({signed: false, user: {}});
+        this.props.resetUser();
+    }
     render() {
         const users = this.props.users;
         let WelcomePanel;
         if(this.state.signed)
-            WelcomePanel = <p className="nav-welcome">Welcome, {this.state.user.username}!</p>;
+            WelcomePanel = <NavDropdown eventKey={3} title={"Welcome, " + this.state.user.username + "!"} id="basic-nav-dropdown">
+                <MenuItem eventKey={2} onClick={this.logout}><Link to="/">Logout</Link></MenuItem>
+            </NavDropdown>;
             else {
             WelcomePanel = <NavDropdown eventKey={3} title="Login" id="basic-nav-dropdown">
                 <Login returnData={this.returnData.bind(this)} users={users}/>
-            </NavDropdown>
+            </NavDropdown>;
         }
         return (
             <Navbar inverse collapseOnSelect>
