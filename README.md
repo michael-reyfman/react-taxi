@@ -15,12 +15,15 @@ July 15:
 - Added login and separate registration forms with phone/car number masks
 - Added models for orders, drivers and passengers
 - Users and orders are stored in arrays (it's just a front-end part
+July 16:
+- Finished making a form for drivers
+- Added react router in order to manage pages and hide a registration form
+- Added ability to log out
+- Added a prototype of an order form (only for passengers, uses data from their profile)
 
 [TODO]
-- Finish form for drivers
-- Add order form
+- Finish an order form
 - Enable support for google maps
-- Add some additional information and footer
-- Use react router to hide registration form
+- Add some additional information and footers
 - Add driver terminal and userpages for drivers and passengers
 - Rewrite the project using Redux
