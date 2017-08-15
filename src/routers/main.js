@@ -1,24 +1,31 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 import Home from '../components/home';
-import RegForm from '../components/regform';
+import PassRegForm from '../components/passregform';
+import DriverRegForm from '../components/driverregform';
+
+
+class Profile extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h1>{this.props.user.username}'s profile</h1>
+            </div>
+        )
+    }
+}
 
 
 class Main extends Component {
     render() {
         return (
             <Switch>
-                <Route exact path='/' render={(props) => (
-                    <Home user={this.props.user} usertype={this.props.usertype}/>
-                )}/>
-                <Route exact path='/registration' render={(props) => (
-                    <RegForm
-                        activereg={this.props.activereg}
-                        userlist={this.props.userlist}
-                        addUser={this.props.addUser}
-                        changeForm={this.props.changeForm}
-                    />
-                )}/>
+                <Route exact path='/' component={Home}/>
+                <Route exact path='/register/passengers' component={PassRegForm}/>
+                <Route exact path='/register/drivers' component={DriverRegForm}/>
             </Switch>
         );
     }

@@ -4,55 +4,47 @@
 import React, { Component } from 'react';
 import '../App.css';
 import {FormControl, FormGroup, Col, Button, ControlLabel, Navbar} from 'react-bootstrap';
-import Passenger from '../models/passenger';
-import Driver from '../models/driver';
 import { Link } from 'react-router-dom';
+import {USERNAME_FILL_LOGIN, PASSWORD_FILL_LOGIN, LOGIN_PRESS} from '../redux/constants';
+import store from '../index';
+
 
 class Login extends Component {
     constructor() {
         super();
-        this.state = {
-            username: "",
-            password: "",
-            matching: true,
-        };
         this.usernameFill = this.usernameFill.bind(this);
         this.passwordFill = this.passwordFill.bind(this);
-        this.signInPassenger = this.signInPassenger.bind(this);
-        this.signInDriver = this.signInDriver.bind(this);
+        this.signIn = this.signIn.bind(this);
     }
     usernameFill(event) {
-        this.setState({username: event.target.value});
+        store.dispatch({
+            type: USERNAME_FILL_LOGIN,
+            payload: event.target.value
+        });
     }
     passwordFill(event) {
-        this.setState({password: event.target.value});
+        store.dispatch({
+            type: PASSWORD_FILL_LOGIN,
+            payload: event.target.value
+        });
     }
-    signInPassenger() {
-        const users = this.props.users;
-        let flag = false;
-        for(let i = 0; i < users.length; i++)
-            flag = flag || (users[i].username === this.state.username && users[i].password === this.state.password && users[i] instanceof Passenger);
-        if(flag) {
-            this.props.returnData(this.state.username, this.state.password);
-            this.setState({matching: true});
-        } else {
-            this.setState({matching: false});
-        }
-    }
-    signInDriver() {
-        const users = this.props.users;
-        let flag = false;
-        for(let i = 0; i < users.length; i++)
-            flag = flag || (users[i].username === this.state.username && users[i].password === this.state.password && users[i] instanceof Driver);
-        if(flag) {
-            this.props.returnData(this.state.username, this.state.password);
-            this.setState({matching: true});
-        } else {
-            this.setState({matching: false});
-        }
+    signIn() {
+        store.dispatch({
+            type: LOGIN_PRESS
+        });
+        console.log(store.getState());
     }
     render() {
-        const error = this.state.matching ? null : <p className="small-text error-msg">Error! Wrong username or password!</p>;
+        const state_tree = store.getState();
+        const wrong_data = (state_tree.loginWindow.wrong !== null && state_tree.loginWindow.wrong === true);
+        const valid_data = (state_tree.loginWindow.valid == null || state_tree.loginWindow.valid === true);
+        let error_msg;
+        if(wrong_data) {
+            error_msg = <p className="error-msg">Wrong username or password!</p>
+        }
+        if(!valid_data) {
+            error_msg = <p className="error-msg">Username or password must be at least 6 characters long!</p>
+        }
         return(
             <div className="login-panel">
                 <h4 className="form-header">Login</h4>
@@ -76,19 +68,18 @@ class Login extends Component {
                     </FormGroup>
 
                     <FormGroup className="form-element">
-                        <Col sm={6}>
-                            <Button type="submit" className="login-button" onClick={this.signInPassenger}>
-                                <Link to="/">Sign as passenger</Link>
-                            </Button>
-                        </Col>
-                        <Col sm={6}>
-                            <Button type="submit" className="login-button" onClick={this.signInDriver}>
-                                <Link to="/">Sign as driver</Link>
-                            </Button>
+                        <Col sm={3} md={3} lg={3} smOffset={9} mdOffset={9} lgOffset={9}>
+                            <div id="#wrapper">
+                                <Link to="/">
+                                    <Button type="submit" className="login-button" onClick={this.signIn}>
+                                        Sign in!
+                                    </Button>
+                                </Link>
+                            </div>
                         </Col>
                     </FormGroup>
-                    {error}
-                    <p className="small-text">New here? Please complete <Link to={{pathname: '/registration'}}>registration</Link> (it's fast and fancy!)</p>
+                    {error_msg}
+                    <p className="small-text">New here? Please complete <Link to="/register/passengers">registration</Link> (it's fast and fancy!)</p>
                 </Navbar.Form>
             </div>
         );

@@ -3,20 +3,16 @@
  */
 import React, { Component } from 'react';
 import '../App.css';
+import store from '../index';
+import {USERNAME_FILL_PASSENGER, PASSWORD_FILL_PASSENGER, NAME_FILL_PASSENGER, PHONE_FILL_PASSENGER} from '../redux/constants';
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-bootstrap';
 import MaskedFormControl from 'react-bootstrap-maskedinput';
-import Passenger from '../models/passenger';
+import {Link} from 'react-router-dom';
 
 
-class PassRegistrationForm extends Component {
+export default class PassRegForm extends Component {
     constructor() {
         super();
-        this.state = {
-            username: "",
-            password: "",
-            name: "",
-            phone: "",
-        };
         this.usernameFill = this.usernameFill.bind(this);
         this.passwordFill = this.passwordFill.bind(this);
         this.nameFill     = this.nameFill.bind(this);
@@ -24,23 +20,24 @@ class PassRegistrationForm extends Component {
         this.extractUser  = this.extractUser.bind(this);
     }
     usernameFill(event) {
-        this.setState({username: event.target.value});
+        store.dispatch({type: USERNAME_FILL_PASSENGER, payload: event.target.value});
     }
     passwordFill(event) {
-        this.setState({password: event.target.value});
+        store.dispatch({type: PASSWORD_FILL_PASSENGER, payload: event.target.value});
     }
     nameFill(event) {
-        this.setState({name: event.target.value});
+        store.dispatch({type: NAME_FILL_PASSENGER, payload: event.target.value});
     }
     phoneFill(event) {
-        this.setState({phone: event.target.value});
+        store.dispatch({type: PHONE_FILL_PASSENGER, payload: event.target.value});
     }
     extractUser(event) {
-        this.props.addUser(new Passenger(this.state.username, this.state.name, this.state.password, this.state.phone));
-        event.preventDefault();
+
     }
     render() {
         return(
+            <div>
+                <h2 className="form-header">Registration for passengers | <Link to="/register/drivers">drivers</Link></h2>
                 <Form horizontal>
                     <FormGroup controlId="formHorizontalUsername">
                         <Col componentClass={ControlLabel} sm={3}>
@@ -79,15 +76,16 @@ class PassRegistrationForm extends Component {
                     </FormGroup>
 
                     <FormGroup>
-                        <Col sm={12}>
-                            <Button type="submit" onClick={this.extractUser}>
-                                Sign up!
-                            </Button>
+                        <Col sm={3} smOffset={5}>
+                            <Link to="/">
+                                <Button type="submit" onClick={this.extractUser}>
+                                    Sign up!
+                                </Button>
+                            </Link>
                         </Col>
                     </FormGroup>
                 </Form>
+            </div>
         );
     }
 }
-
-export default PassRegistrationForm;

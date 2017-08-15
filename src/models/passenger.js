@@ -4,12 +4,14 @@
 
 
 class Passenger {
-    constructor(_username, _name, _password, _phone) {
+    constructor(_id, _username, _name, _password, _phone) {
+        this.id = _id;
         this.username = _username;
         this.name = _name;
         this.password = _password;
         this.phone = _phone;
         this.orders = [];
+        this.usertype = "PASSENGER"
     }
 }
 

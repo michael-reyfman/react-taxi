@@ -3,7 +3,8 @@
  */
 
 class Driver {
-    constructor(_username, _name, _password, _phone, _car, _carclass, _licenseNo) {
+    constructor(_id, _username, _name, _password, _phone, _car, _carclass, _licenseNo) {
+        this.id = _id;
         this.username = _username;
         this.name = _name;
         this.password = _password;
@@ -12,6 +13,7 @@ class Driver {
         this.carclass = _carclass;
         this.licenseNo = _licenseNo;
         this.orders = [];
+        this.usertype = "DRIVER"
     }
 }
 
