@@ -20,10 +20,12 @@ July 16:
 - Added react router in order to manage pages and hide a registration form
 - Added ability to log out
 - Added a prototype of an order form (only for passengers, uses data from their profile)
+August 15 (so far):
+- Completely rewritten project using Redux
+- Added UI for main page
+- Splitted registration by two routes
 
 [TODO]
 - Finish an order form
 - Enable support for google maps
-- Add some additional information and footers
 - Add driver terminal and userpages for drivers and passengers
-- Rewrite the project using Redux
