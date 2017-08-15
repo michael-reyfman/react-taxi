@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import store from '../index';
 import {USERNAME_FILL_DRIVER, PASSWORD_FILL_DRIVER, NAME_FILL_DRIVER, PHONE_FILL_DRIVER,
-CAR_FILL_DRIVER, CARCLASS_CHANGE_DRIVER, LICENSENO_FILL_DRIVER} from '../redux/constants';
+CAR_FILL_DRIVER, CARCLASS_CHANGE_DRIVER, LICENSENO_FILL_DRIVER, ADD_USER, DRIVER} from '../redux/constants';
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-bootstrap';
 import MaskedFormControl from 'react-bootstrap-maskedinput';
 import { Link } from 'react-router-dom';
@@ -44,7 +44,19 @@ export default class DriverRegForm extends Component {
         store.dispatch({type: CARCLASS_CHANGE_DRIVER, payload: event.target.value});
     }
     extractUser(event) {
-        event.preventDefault();
+        const state = store.getState().regDriver;
+        store.dispatch({
+            type: ADD_USER,
+            usertype: DRIVER,
+            username: state.username,
+            password: state.password,
+            name: state.name,
+            phone: state.phone,
+            car: state.car,
+            carclass: state.carclass,
+            licenseNo: state.licenseNo
+        });
+        console.log(store.getState());
     }
     render() {
         return (

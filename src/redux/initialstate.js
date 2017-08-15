@@ -24,7 +24,8 @@ export const initialState = {
         username: "",
         password: "",
         name: "",
-        phone: ""
+        phone: "",
+        valid: undefined
     },
     regDriver: {
         username: "",
@@ -33,6 +34,7 @@ export const initialState = {
         phone: "",
         car: "",
         carclass: "economy",
-        licenseNo: ""
+        licenseNo: "",
+        valid: undefined
     },
 };
