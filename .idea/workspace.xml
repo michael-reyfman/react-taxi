@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d605666-ad85-40c5-b070-541480f374c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home.js" afterPath="$PROJECT_DIR$/src/components/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation.js" afterPath="$PROJECT_DIR$/src/components/navigation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/orderform.js" afterPath="$PROJECT_DIR$/src/components/orderform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/initialstate.js" afterPath="$PROJECT_DIR$/src/redux/initialstate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducer_functions/loginwindow.js" afterPath="$PROJECT_DIR$/src/redux/reducer_functions/loginwindow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routers/main.js" afterPath="$PROJECT_DIR$/src/routers/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/passregform.js" afterPath="$PROJECT_DIR$/src/components/passregform.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -98,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
@@ -122,12 +115,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="passregform.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="passregform.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/passregform.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="349">
+              <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+              <folding>
+                <element signature="e#43#84#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,8 +130,8 @@
       <file leaf-file-name="driverregform.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/driverregform.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+            <state relative-caret-position="255">
+              <caret line="53" column="31" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="53" selection-end-column="31" />
               <folding>
                 <element signature="e#43#84#0" expanded="true" />
               </folding>
@@ -200,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/redux/mainreducer.js" />
         <option value="$PROJECT_DIR$/src/components/passregistration.js" />
         <option value="$PROJECT_DIR$/src/components/login.js" />
-        <option value="$PROJECT_DIR$/src/components/passregform.js" />
         <option value="$PROJECT_DIR$/src/components/regform.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.css" />
@@ -212,6 +206,7 @@
         <option value="$PROJECT_DIR$/src/components/orderform.js" />
         <option value="$PROJECT_DIR$/src/routers/main.js" />
         <option value="$PROJECT_DIR$/src/components/home.js" />
+        <option value="$PROJECT_DIR$/src/components/passregform.js" />
       </list>
     </option>
   </component>
@@ -502,12 +497,12 @@
       <workItem from="1502790988932" duration="214000" />
       <workItem from="1502791236625" duration="558000" />
       <workItem from="1502799904783" duration="24494000" />
-      <workItem from="1502872865555" duration="3365000" />
+      <workItem from="1502872865555" duration="3758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114118000" />
+    <option name="totallyTimeSpent" value="114511000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,7 +514,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1368" height="768" extended-state="7" />
+    <frame x="0" y="0" width="1368" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24926901" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -796,28 +791,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/driverregform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
-          <folding>
-            <element signature="e#43#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/passregform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -878,6 +855,26 @@
             <element signature="e#43#84#0" expanded="true" />
             <element signature="e#775#1899#0" expanded="false" />
             <element signature="e#4185#8909#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/driverregform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="53" column="31" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="53" selection-end-column="31" />
+          <folding>
+            <element signature="e#43#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/passregform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+          <folding>
+            <element signature="e#43#84#0" expanded="true" />
           </folding>
         </state>
       </provider>

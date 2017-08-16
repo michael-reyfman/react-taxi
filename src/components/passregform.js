@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import store from '../index';
-import {USERNAME_FILL_PASSENGER, PASSWORD_FILL_PASSENGER, NAME_FILL_PASSENGER, PHONE_FILL_PASSENGER} from '../redux/constants';
+import {USERNAME_FILL_PASSENGER, PASSWORD_FILL_PASSENGER, NAME_FILL_PASSENGER, PHONE_FILL_PASSENGER, PASSENGER, ADD_USER} from '../redux/constants';
 import {Form, FormControl, FormGroup, Col, Button, ControlLabel} from 'react-bootstrap';
 import MaskedFormControl from 'react-bootstrap-maskedinput';
 import {Link} from 'react-router-dom';
@@ -32,7 +32,15 @@ export default class PassRegForm extends Component {
         store.dispatch({type: PHONE_FILL_PASSENGER, payload: event.target.value});
     }
     extractUser(event) {
-
+        const state =store.getState();
+        store.dispatch({
+            type: ADD_USER,
+            usertype: PASSENGER,
+            username: state.username,
+            password: state.password,
+            name: state.name,
+            phone: state.phone,
+        });
     }
     render() {
         return(
