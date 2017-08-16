@@ -11,9 +11,9 @@ const validation = (username, password) => username.length >= 6 && password.leng
 const isCorrectUser = (username, password, userlist) => {
     for(let tempUser of userlist) {
         if(tempUser.username === username && tempUser.password === password)
-            return [true, tempUser];
+            return [true, tempUser.id];
     }
-    return [false, undefined];
+    return [false, -1];
 };
 
 export const username_fill_login = (state, action) => {
@@ -43,7 +43,7 @@ export const login_press = (state) => {
     const isCorrect = isCorrectUser(state.loginWindow.username, state.loginWindow.password, state.userList);
     if(isCorrect[0]) {
         return $set(state, {
-            activeUser: isCorrect[1],
+            activeUserID: isCorrect[1],
             loginWindow: $set(state.loginWindow, {
                 valid: true,
                 wrong: false
@@ -61,7 +61,7 @@ export const login_press = (state) => {
 
 export const logout_press = (state) => {
    return $set(state, {
-       activeUser: undefined,
+       activeUserID: -1,
        loginWindow: $set(state.loginWindow, {
            valid: undefined,
            wrong: undefined

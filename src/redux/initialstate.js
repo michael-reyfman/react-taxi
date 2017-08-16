@@ -3,7 +3,7 @@
  */
 export const initialState = {
     userList: [],
-    activeUser: undefined,
+    activeUserID: -1,
     avalId: 0,
     loginWindow: {
         username: "",

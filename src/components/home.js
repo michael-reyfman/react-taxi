@@ -62,7 +62,7 @@ const Prices = () => (
                         </div>
                         <h3>Comfort class</h3>
                         <p>If economy class is not comfortable enough, there you go!</p>
-                        <p>Starting from <span className="price-highlighter">45.00 UAH</span></p>
+                        <p>Starting from <span className="price-highlighter">60.00 UAH</span></p>
                     </div>
                 </Col>
                 <Col xs={6} sm={6} md={3} lg={3}>
@@ -72,7 +72,7 @@ const Prices = () => (
                         </div>
                         <h3>Business class</h3>
                         <p>The best way to impress your business partners is to order our S-Class cars!</p>
-                        <p>Starting from <span className="price-highlighter">75.00 UAH</span></p>
+                        <p>Starting from <span className="price-highlighter">125.00 UAH</span></p>
                     </div>
                 </Col>
                 <Col xs={6} sm={6} md={3} lg={3}>
@@ -82,7 +82,7 @@ const Prices = () => (
                         </div>
                         <h3>VIP class</h3>
                         <p>Oh boy... it's only for chosen ones! Really. <br/> Free whisky included!</p>
-                        <p>Starting from <span className="price-highlighter">150.00 UAH</span></p>
+                        <p>Starting from <span className="price-highlighter">300.00 UAH</span></p>
                     </div>
                 </Col>
             </Row>

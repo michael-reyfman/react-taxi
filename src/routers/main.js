@@ -12,7 +12,7 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.user.username}'s profile</h1>
+                <h1>User's profile</h1>
             </div>
         )
     }
@@ -26,6 +26,7 @@ class Main extends Component {
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/register/passengers' component={PassRegForm}/>
                 <Route exact path='/register/drivers' component={DriverRegForm}/>
+                <Route exact path='/user/:id' component={Profile}/>
             </Switch>
         );
     }

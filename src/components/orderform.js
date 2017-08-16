@@ -6,6 +6,16 @@ import {NAME_FILL_ORDER, FROM_FILL_ORDER, TO_FILL_ORDER, PHONE_FILL_ORDER, CARCL
 import store from '../index';
 import { Link } from 'react-router-dom';
 
+
+const getUserbyID = (id) => {
+    const state = store.getState();
+    for(let i = 0; i < state.userList.length; i++) {
+        if(state.userList[i].id === id)
+            return state.userList[i];
+    }
+    return -1;
+};
+
 class OrderForm extends Component {
     constructor() {
         super();
@@ -32,6 +42,7 @@ class OrderForm extends Component {
     }
     render() {
         const state = store.getState();
+        const user = getUserbyID(state.activeUserID);
         return(
             <div>
                 <Form horizontal>
@@ -40,7 +51,7 @@ class OrderForm extends Component {
                             Your name
                         </Col>
                         <Col sm={6}>
-                            <FormControl type="text" onChange={this.nameFill} defaultValue={state.activeUser.name}/>
+                            <FormControl type="text" onChange={this.nameFill} defaultValue={user.name}/>
                         </Col>
                     </FormGroup>
 
@@ -71,9 +82,9 @@ class OrderForm extends Component {
                                 type='text'
                                 name='phoneNumber'
                                 mask='+38(111)111-11-11'
-                                value={state.activeUser.phone}
+                                value={user.phone}
                                 onChange={this.phoneFill}
-                                placeholder={state.activeUser.phone}
+                                placeholder={user.phone}
                             />
                         </Col>
                     </FormGroup>
@@ -117,7 +128,9 @@ export default class OrderFormOverlay extends Component {
         const error_msg = <p className="error-msg">
             You have to proceed a <Link to="/register/passengers">registration</Link> or sign in to make an order!
         </p>;
-        const order_form = store.getState().activeUser && store.getState().activeUser.usertype === "PASSENGER" ? <OrderForm/> : error_msg;
+        const state = store.getState();
+        const user = getUserbyID(state.activeUserID);
+        const order_form = state.activeUserID >= 0 && user.usertype === "PASSENGER" ? <OrderForm/> : error_msg;
         return (
             <div className="order-form">
                 <h2>Order form</h2>

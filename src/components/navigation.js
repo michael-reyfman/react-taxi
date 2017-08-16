@@ -15,12 +15,21 @@ class WelcomePanel extends Component {
     logOut() {
         store.dispatch({type: LOGOUT_PRESS});
     }
+    getUserbyID(id) {
+        const state = store.getState();
+        for(let i = 0; i < state.userList.length; i++) {
+            if(state.userList[i].id === id)
+                return state.userList[i];
+        }
+        return -1;
+    }
     render() {
-        const activeUser = store.getState().activeUser;
-        if(activeUser){
+        const activeUserID = store.getState().activeUserID;
+        const user = this.getUserbyID(activeUserID);
+        if(activeUserID >= 0){
             return(
-                <NavDropdown eventKey={3} title={"Welcome, " + activeUser.username + "!"} id="basic-nav-dropdown">
-                    <MenuItem eventKey={3}><Link to={"/user/" + activeUser.id}>Profile</Link></MenuItem>
+                <NavDropdown eventKey={3} title={"Welcome, " + user.username + "!"} id="basic-nav-dropdown">
+                    <MenuItem eventKey={3}><Link to={"/user/" + activeUserID}>Profile</Link></MenuItem>
                     <MenuItem eventKey={4} onClick={this.logOut.bind(this)}><Link to="/">Logout</Link></MenuItem>
                 </NavDropdown>
             );
