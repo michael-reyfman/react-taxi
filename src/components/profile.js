@@ -9,8 +9,6 @@ import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 
-
-
 const getUserbyID = (id) => {
     const state = store.getState();
     for(let i = 0; i < state.userList.length; i++) {
