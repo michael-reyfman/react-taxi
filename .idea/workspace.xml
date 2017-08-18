@@ -5,10 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/redux/reducer_functions/orderform.js" line="20" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d605666-ad85-40c5-b070-541480f374c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/profile.js" afterPath="$PROJECT_DIR$/src/components/profile.js" />
-    </list>
+    <list default="true" id="5d605666-ad85-40c5-b070-541480f374c7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -508,12 +505,12 @@
       <workItem from="1502790988932" duration="214000" />
       <workItem from="1502791236625" duration="558000" />
       <workItem from="1502799904783" duration="24494000" />
-      <workItem from="1502872865555" duration="14754000" />
+      <workItem from="1502872865555" duration="14786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125507000" />
+    <option name="totallyTimeSpent" value="125539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
