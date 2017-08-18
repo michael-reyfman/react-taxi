@@ -45,7 +45,3 @@ export const carclass_change_order = (state, action) => {
         })
     });
 };
-//
-// export const create_order = (state, action) => {
-//
-// };

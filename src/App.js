@@ -11,15 +11,15 @@ const addInitialUsers = () => {
     store.dispatch({
         type: ADD_USER,
         usertype: PASSENGER,
-        username: "anal123",
+        username: "mick123",
         name: "Michael",
-        password: "h27a123",
+        password: "123123",
         phone: "+38(093)911-91-19"
     });
     store.dispatch({
         type: ADD_USER,
         usertype: PASSENGER,
-        username: "pashapidor",
+        username: "pavel141",
         name: "Alexander",
         password: "asasas",
         phone: "+38(050)184-14-88"
@@ -27,13 +27,13 @@ const addInitialUsers = () => {
     store.dispatch({
         type: ADD_USER,
         usertype: DRIVER,
-        username: "dayapidor",
+        username: "realpavel",
         name: "Pavel",
         password: "qwerty78",
         phone: "+38(095)322-22-22",
         car: "Nissan Qashqai",
         carclass: "classic",
-        licenseNo: "AA2728PI"
+        licenseNo: "FA2928MK"
     })
 };
 
@@ -88,63 +88,6 @@ class App extends Component {
         )
     }
 }
-    // constructor() {
-    //     super();
-    //     // this.state = {
-    //     //     login: false,
-    //     //     activeuser: {},
-    //     //     usertype: undefined,
-    //     //     userlist: Users,
-    //     //     activereg: "left",
-    //     //     lastid: 3,
-    //     // };
-    //     this.changeForm = this.changeForm.bind(this);
-    // }
-    // returnInfo(_user) {
-    //     const _type = _user instanceof Passenger ? "Passenger" : "Driver";
-    //     this.setState({login: true, activeuser: _user, usertype: _type});
-    // }
-    // resetUser() {
-    //     this.setState({
-    //         login: false,
-    //         activeuser: {},
-    //         usertype: undefined
-    //     })
-    // }
-    // addUser(user) {
-    //     let users = this.state.userlist;
-    //     users.push(user);
-    //     this.setState({
-    //         userlist: users,
-    //         lastid: this.state.lastid + 1
-    //     });
-    // }
-    // changeForm() {
-    //     const newstate = this.state.activereg === "left" ? "right" : "left";
-    //     this.setState({activereg: newstate});
-    // }
-    // render() {
-    //     // console.log(this.state.login, this.state.activeuser, this.state.usertype);
-    //     // console.log(this.state.userlist);
-    //     addInitialUsers();
-    //     return (
-    //         <div className="App">
-    //             <Navigation users={appStore.getState().userList} returnInfo={this.returnInfo.bind(this)} resetUser={this.resetUser.bind(this)}/>
-    //             <Main
-    //                 lastid={this.state.lastid}
-    //                 activereg={this.state.activereg}
-    //                 userlist={this.state.userlist}
-    //                 addUser={this.addUser.bind(this)}
-    //                 changeForm={this.changeForm.bind(this)}
-    //                 user={this.state.activeuser}
-    //                 usertype={this.state.usertype}
-    //             />
-    //         </div>
-    //     );
-    // }
 
-// App.propTypes = {
-//     resetUser: React.PropTypes.func,
-// };
 
 export default App;

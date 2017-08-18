@@ -31,8 +31,8 @@ const WhyUs = () => (
                     <Well className="well-item">Using our service is a great contribution for making world peace!</Well>
                     <Well className="well-item">Our drivers are intelligent enough not to listening to Mikhail Krug</Well>
                     <Well className="well-item">We are always willing to help you anytime! (if you have enough money for that)</Well>
-                    <Well className="well-item">Are you not gay yet? Our taxi will change this in one push! (or 53 spins)</Well>
-                    <Well className="well-item">And again, our drivers are intelligent enough not to listening to Mikhail Krug.</Well>
+                    <Well className="well-item">Something new and impressive goes here...</Well>
+                    <Well className="well-item">And here...</Well>
                 </Col>
             </Row>
         </Grid>
@@ -105,7 +105,7 @@ const Services = () => (
                         <p>
                             Our drivers are system analysists with high level of IQ.
                             They can discuss any problems existing in our (and not only our) Universe -
-                            from dildos and Ukrainian politics to quantum mechanics and string theory!
+                            from fidget spinners and Ukrainian politics to quantum mechanics and string theory!
                         </p>
                     </div>
                 </Col>
@@ -116,7 +116,7 @@ const Services = () => (
                         </div>
                         <h3 className="services-header">Solving complex math tasks</h3>
                         <p>
-                            As we have mentioned earlier, we are uncomparably smart. If you have some problems
+                            As we have mentioned earlier, we are incomparably smart. If you have some problems
                             at school or university, we are ready to solve and explain everything you need.
                             (This feature is not free, obviously. The price is discussed privately with the driver, hehe.)
                         </p>
@@ -132,7 +132,7 @@ const Services = () => (
                         <h3 className="services-header">Animal transfer</h3>
                         <p>
                             If you want to take your dear pet (or your friend who is fond of JavaScript) anywhere,
-                            we can offer you our service.
+                            we can offer you our service!
                             We accept animals on-board if they are not dangerous for the entire world and if they
                             wouldn't be able to damage our precious cars (and drivers!).
                         </p>
@@ -145,7 +145,7 @@ const Services = () => (
                         </div>
                         <h3 className="services-header">Sober driver</h3>
                         <p>
-                            If you are drunk as fuck, you definitely mustn't drive your car. This can be unfair
+                            If you are drunk as ****, you definitely mustn't drive your car. This can be unfair
                             to you as next day you spend a lot of time bringing the car back. But with our service
                             "Sober driver" you can call one of our experienced drivers and they will drive you safely at home.
                         </p>
@@ -176,7 +176,7 @@ const Services = () => (
                         <p>
                             Having your car suddenly broken is a big problem. Our specialists can quickly change
                             a wheel, charge a car's battery and even evacuate it to the nearest car repairing center!
-                            Try this shit unless you want to die in your damaged vehicle, kek.
+                            Try this unless you want to die in your damaged vehicle, kek.
                         </p>
                     </div>
                 </Col>
