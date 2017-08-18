@@ -4,7 +4,7 @@ import Navigation from './components/navigation';
 import Main from './routers/main';
 import {ADD_USER, PASSENGER, DRIVER} from './redux/constants';
 import store from './index';
-import {Row, Well, Grid, Col, Button} from 'react-bootstrap';
+import {Grid, Col} from 'react-bootstrap';
 
 
 const addInitialUsers = () => {

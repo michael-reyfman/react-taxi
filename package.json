@@ -6,6 +6,7 @@
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
     "react-bootstrap-maskedinput": "^0.3.0",
+    "react-bootstrap-table": "^4.0.1",
     "react-dom": "^15.6.1",
     "react-fa-icon": "^0.1.4",
     "react-icons": "^2.2.5",

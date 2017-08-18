@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import OrderFormOverlay from './orderform';
-import {Row, Well, Grid, Col, Button} from 'react-bootstrap';
+import {Row, Well, Grid, Col} from 'react-bootstrap';
 import img1 from '../images/whyusplain.png';
 import Money from 'react-icons/lib/fa/money';
 import ThumbsOUp from 'react-icons/lib/fa/thumbs-o-up';

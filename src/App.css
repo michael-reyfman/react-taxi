@@ -46,13 +46,6 @@
     font-size: 0.75em;
 }
 
-.active-true {
-    pointer-events: none;
-    cursor: default;
-    color: black;
-}
-
-
 .error-msg {
     text-align: center;
     margin: 5px 0 0 0;
@@ -197,4 +190,8 @@ footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .foo
 
 .profile h1{
     text-align: center;
+}
+
+#change-password {
+    margin: 15px 15px;
 }

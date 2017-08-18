@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import Home from '../components/home';
 import PassRegForm from '../components/passregform';
